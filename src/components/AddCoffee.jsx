@@ -70,12 +70,12 @@ const AddCoffee = () => {
             />
           </fieldset>
           <fieldset className="fieldset bg-base-200 border-base-300 rounded-box border p-4">
-            <label className="label">Taste</label>
+            <label className="label">Price</label>
             <input
               type="text"
-              name="taste"
+              name="price"
               className="input w-full"
-              placeholder="Enter coffee taste"
+              placeholder="Enter coffee price"
             />
           </fieldset>
           <fieldset className="fieldset bg-base-200 border-base-300 rounded-box border p-4">
