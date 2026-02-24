@@ -1,7 +1,9 @@
 import React from "react";
+import { useNavigate } from "react-router";
 import Swal from "sweetalert2";
 
 const AddCoffee = () => {
+    const navigate = useNavigate();
   const handleAddCoffee = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -21,10 +23,11 @@ const AddCoffee = () => {
       .then((data) => {
         if (data.insertedId) {
           Swal.fire({
-            title: "Drag me!",
+            title: "Added Successfully!",
             icon: "success",
             draggable: true,
           });
+          navigate('/');
         }
       });
   };
