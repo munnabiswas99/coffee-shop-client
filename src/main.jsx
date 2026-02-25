@@ -13,6 +13,7 @@ import Home from './components/Home.jsx';
 import AddCoffee from './components/AddCoffee.jsx';
 import UpdateCoffee from './components/UpdateCoffee.jsx';
 import CoffeeDetails from './components/CoffeeDetails.jsx';
+import SignUp from './components/SignUp.jsx';
 
 let router = createBrowserRouter([
   {  
@@ -25,7 +26,11 @@ let router = createBrowserRouter([
         Component: Home
       },
       {
-        path: "addCoffee",
+        path: '/signUp',
+        Component: SignUp
+      },
+      {
+        path: "/addCoffee",
         Component: AddCoffee
       },
       {
