@@ -10,14 +10,17 @@ const SignUp = () => {
     e.preventDefault();
     const form = e.target;
     const formData = new FormData(form);
-    const { email, password, ...userInfo } = Object.fromEntries(
-      formData.entries(),
-    );
-
-    console.log(email, password, userInfo);
+    const { email, password, ...rest } = Object.fromEntries(formData.entries());
 
     createUser(email, password)
       .then((result) => {
+        const userInfo = {
+          email,
+          ...rest,
+          creationTime: result.user.metadata.creationTime,
+          lastSignInTime: result.user.metadata.lastSignInTime,
+        };
+
         console.log(result);
         fetch("http://localhost:3000/users", {
           method: "POST",
@@ -28,7 +31,6 @@ const SignUp = () => {
         })
           .then((res) => res.json())
           .then((data) => {
-            console.log(data);
             if (data.insertedId) {
               Swal.fire({
                 position: "top-end",
@@ -64,6 +66,13 @@ const SignUp = () => {
             className="input"
             placeholder="Phone Number"
             name="phone"
+          />
+          <label className="label">Photo URL</label>
+          <input
+            type="text"
+            className="input"
+            placeholder="photo url"
+            name="photo"
           />
           <label className="label">Email</label>
           <input
