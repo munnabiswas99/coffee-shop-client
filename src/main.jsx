@@ -16,6 +16,7 @@ import CoffeeDetails from './components/CoffeeDetails.jsx';
 import SignUp from './components/SignUp.jsx';
 import AuthProvider from './contexts/AuthProvider.jsx';
 import Users from './components/Users.jsx';
+import SignIn from './components/SignIn.jsx';
 
 let router = createBrowserRouter([
   {  
@@ -30,6 +31,10 @@ let router = createBrowserRouter([
       {
         path: '/signUp',
         Component: SignUp
+      },
+      {
+        path: '/signIn',
+        Component: SignIn
       },
       {
         path: "/addCoffee",
