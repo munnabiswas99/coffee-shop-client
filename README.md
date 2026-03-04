@@ -1,16 +1,117 @@
-# React + Vite
+# ☕ Coffee Store Client
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Frontend application for Coffee Store built with **React**, **Firebase Authentication**, and **Tailwind CSS**.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Live Site
 
-## React Compiler
+🔗 https://coffee-shop-auth-aff53.web.app
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🛠️ Technologies Used
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+* React
+* React Router
+* Firebase Authentication
+* Tailwind CSS
+* SweetAlert2
+* Fetch API
+
+---
+
+## 🔥 Features
+
+* User Authentication (Sign Up / Login)
+* Add Coffee
+* Update Coffee
+* Delete Coffee
+* View Coffee Details
+* Protected Routes
+* SweetAlert Notifications
+* Responsive Design
+
+---
+
+## 📂 Project Structure
+
+```
+src/
+ ├── components/
+ ├── pages/
+ ├── contexts/
+ ├── routes/
+ └── main.jsx
+```
+
+---
+
+## 🔐 Firebase Setup
+
+Create `.env.local` file:
+
+```
+VITE_apiKey=your_api_key
+VITE_authDomain=your_auth_domain
+VITE_projectId=your_project_id
+VITE_storageBucket=your_storage_bucket
+VITE_messagingSenderId=your_sender_id
+VITE_appId=your_app_id
+```
+
+---
+
+## ▶️ Run Locally
+
+```bash
+npm install
+npm run dev
+```
+
+Runs on:
+
+```
+http://localhost:5173
+```
+
+---
+
+## 🌍 Deployment
+
+Deployed using **Firebase Hosting**.
+
+To deploy:
+
+```bash
+firebase deploy
+```
+
+---
+
+## 🔗 Server API
+
+Connected to:
+
+```
+https://coffee-store-server-rho-navy.vercel.app/
+```
+
+---
+
+## 📌 Authentication Flow
+
+1. User signs up using Firebase
+2. Additional user data stored in MongoDB
+3. AuthContext manages user state
+4. Private routes protect pages
+
+---
+
+## 👨‍💻 Author
+
+Munna Biswas
+
+## 📜 License
+
+This project is open-source and free to use.
