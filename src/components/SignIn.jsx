@@ -2,38 +2,36 @@ import React, { use } from "react";
 import { AuthContext } from "../contexts/AuthContext";
 
 const SignIn = () => {
+  const { signIn } = use(AuthContext);
+  const handleSignIn = (e) => {
+    e.preventDefault();
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+    console.log(email, password);
 
-    const {signIn} = use(AuthContext);
-    const handleSignIn = (e) => {
-        e.preventDefault();
-        const email = e.target.email.value;
-        const password = e.target.password.value;
-        console.log(email, password)
-
-        signIn(email, password)
-        .then(result => {
-            console.log(result)
-            const signInInfo = {
-                email,
-                lastSignInTime: result.user?.metadata?.lastSignInTime
-            };
-            fetch('http://localhost:3000/users',{
-                method : 'PATCH',
-                headers : {
-                    'content-type' : 'application/json'
-                },
-                body: JSON.stringify(signInInfo)
-            })
-            .then(res => res.json())
-            .then(result => {
-                console.log('Data after patch', result)
-            })
+    signIn(email, password)
+      .then((result) => {
+        console.log(result);
+        const signInInfo = {
+          email,
+          lastSignInTime: result.user?.metadata?.lastSignInTime,
+        };
+        fetch("https://coffee-store-server-rho-navy.vercel.app/users", {
+          method: "PATCH",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(signInInfo),
         })
-        .catch(error => {
-            console.log(error)
-        })
-
-    }
+          .then((res) => res.json())
+          .then((result) => {
+            console.log("Data after patch", result);
+          });
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
   return (
     <div>
       <div className="card bg-base-100 mx-auto max-w-sm shrink-0 shadow-2xl pt-8 ite">

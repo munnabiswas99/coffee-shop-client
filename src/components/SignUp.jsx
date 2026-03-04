@@ -22,7 +22,7 @@ const SignUp = () => {
         };
 
         console.log(result);
-        fetch("http://localhost:3000/users", {
+        fetch("https://coffee-store-server-rho-navy.vercel.app/users", {
           method: "POST",
           headers: {
             "content-type": "application/json",

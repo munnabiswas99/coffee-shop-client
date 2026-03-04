@@ -12,7 +12,7 @@ const AddCoffee = () => {
     console.log(coffeeData);
 
     //send data to db
-    fetch("http://localhost:3000/coffees", {
+    fetch("https://coffee-store-server-rho-navy.vercel.app/coffees", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
